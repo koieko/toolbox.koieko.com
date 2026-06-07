@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Tools — KO KOIE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:     #f7f5f0;
+  --ink:    #1a1814;
+  --ink2:   #8a8780;
+  --border: #e8e4dc;
+  --display: 'DM Serif Display', serif;
+  --sans:    'DM Sans', sans-serif;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  min-height: 100vh;
+}
+
+/* ナビ */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-brand {
+  font-family: var(--display);
+  font-size: 15px;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.nav-back {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-back:hover { color: var(--ink); }
+
+/* メイン */
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.page-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink2);
+  margin-bottom: 10px;
+}
+
+.page-title {
+  font-family: var(--display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 48px;
+}
+
+/* ツールカード */
+.tools { display: flex; flex-direction: column; gap: 1px; }
+
+.tool {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 28px 32px;
+  transition: border-color 0.2s;
+}
+
+.tool:hover { border-color: var(--ink); }
+
+.tool-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.tool-name {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.tool-tag {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 3px 8px;
+}
+
+.tool-desc {
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.tool-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tool-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 6px 12px;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.tool-link:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+.tool-link svg {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+}
+
+.tool-links--sub {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.tool-link--primary {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+.tool-link--primary:hover {
+  opacity: 0.75;
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.tool-sub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tool-sub-name {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.tool-sub-desc {
+  font-size: 12px;
+  color: var(--ink2);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 32px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink2);
+  border-top: 1px solid var(--border);
+  margin-top: 80px;
+}
+
+@media(max-width: 600px) {
+  nav { padding: 16px 20px; }
+  main { padding: 40px 20px; }
+  .tool { padding: 20px; }
+  .tool-header { flex-direction: column; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="https://koieko.com">KO KOIE</a>
+  <a class="nav-back" href="https://koieko.com">← koieko.com</a>
+</nav>
+
+<main>
+  <div class="page-label">Tools</div>
+  <h1 class="page-title">ツール一覧</h1>
+
+  <div class="tools">
+
+    <!-- Fintech Reader -->
+    <div class="tool">
+      <div class="tool-header">
+        <span class="tool-name">Fintech Reader</span>
+        <span class="tool-tag">Reader</span>
+      </div>
+      <p class="tool-desc">Fintechニュースを自動収集・要約するリーダー。</p>
+      <div class="tool-links">
+        <a class="tool-link tool-link--primary" href="https://reader.koieko.com" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Open
+        </a>
+      </div>
+      <div class="tool-links tool-links--sub">
+        <a class="tool-link" href="https://github.com/koieko/fintech-reader" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          GitHub
+        </a>
+        <a class="tool-link" href="https://dashboard.render.com/web/srv-d8hsot5dt1ts73elr4p0" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Render
+        </a>
+        <a class="tool-link" href="https://platform.claude.com/usage" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Claude 利用量
+        </a>
+      </div>
+    </div>
+
+    <!-- Notion -->
+    <div class="tool">
+      <div class="tool-header">
+        <span class="tool-name">Notion</span>
+        <span class="tool-tag">Workspace</span>
+      </div>
+      <div class="tool-sub-list">
+        <div class="tool-sub">
+          <div class="tool-sub-header">
+            <span class="tool-sub-name">📖 宗教×マーケ ブログ管理</span>
+          </div>
+          <p class="tool-sub-desc">記事ネタ・制作進捗・インプットDBの管理。RSSから自動収集した記事のトリアージもここ。</p>
+          <div class="tool-links">
+            <a class="tool-link" href="https://app.notion.com/p/0a3b87d8d752482fa7e10641e7b61a56?v=ae5dc45dea03472385dcc34f9411938f" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Open
+            </a>
+            <a class="tool-link" href="https://us2.make.com/organization/7904042/dashboard" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+              Make
+            </a>
+          </div>
+        </div>
+        <div class="tool-sub">
+          <div class="tool-sub-header">
+            <span class="tool-sub-name">📌 ネタ帳</span>
+          </div>
+          <p class="tool-sub-desc">宗教×マーケの切り口メモ。記事候補のアイデアをストックする場所。</p>
+          <div class="tool-links">
+            <a class="tool-link" href="https://app.notion.com/p/b18f4973d42646fe90f12a73bb95aae4?v=90c8f05530fb4fc0aacc5c136c369ca3" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Open
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>KO KOIE — Tools</footer>
+
+</body>
+</html>
