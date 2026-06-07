@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Tools — KO KOIE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:     #f7f5f0;
+  --ink:    #1a1814;
+  --ink2:   #8a8780;
+  --border: #e8e4dc;
+  --display: 'DM Serif Display', serif;
+  --sans:    'DM Sans', sans-serif;
+}
+
+html, body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-weight: 300; min-height: 100vh; }
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-back { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink2); text-decoration: none; transition: color 0.2s; }
+.nav-back:hover { color: var(--ink); }
+
+main { max-width: 1000px; margin: 0 auto; padding: 16px 40px 80px; }
+
+.page-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink2); margin-bottom: 10px; }
+.page-title { font-family: var(--display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; line-height: 1.1; margin-bottom: 48px; }
+
+/* リスト形式 */
+.tools { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 24px; }
+@media(max-width: 640px) { .tools { grid-template-columns: 1fr; } }
+
+.tool-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.tool-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.tool-icon svg { width: 18px; height: 18px; stroke: var(--ink2); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+.tool-info { flex: 1; min-width: 0; }
+
+.tool-name { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+.tool-desc { font-size: 13px; color: var(--ink2); line-height: 1.6; margin-bottom: 10px; }
+
+.tool-links { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.tool-link {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 5px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.15s, border-color 0.15s;
+  background: transparent;
+}
+.tool-link:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.tool-link.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.tool-link.primary:hover { opacity: 0.75; }
+
+/* サブ項目（Notion） */
+.tool-sub { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 10px; }
+
+.sub-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.sub-name { font-size: 13px; font-weight: 400; color: var(--ink); flex-shrink: 0; }
+.sub-links { display: flex; gap: 6px; }
+
+footer { text-align: center; padding: 32px; font-size: 11px; letter-spacing: 0.06em; color: var(--ink2); border-top: 1px solid var(--border); margin-top: 40px; }
+
+@media(max-width: 600px) {
+  nav { padding: 16px 20px; }
+  main { padding: 40px 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-back" href="https://koieko.com">← koieko.com</a>
+</nav>
+
+<main>
+  <div class="tools">
+
+    <!-- koieko.com -->
+    <div class="tool-row">
+      <div class="tool-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div class="tool-info">
+        <div class="tool-name">koieko.com</div>
+        <div class="tool-desc">ポートフォリオサイトのドメイン・DNS管理。</div>
+        <div class="tool-links">
+          <a class="tool-link primary" href="https://koieko.com" target="_blank" rel="noopener">Open</a>
+          <a class="tool-link" href="https://github.com/koieko/koieko.com" target="_blank" rel="noopener">GitHub</a>
+          <a class="tool-link" href="https://ap.www.namecheap.com/" target="_blank" rel="noopener">Namecheap</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fintech Reader -->
+    <div class="tool-row">
+      <div class="tool-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/></svg>
+      </div>
+      <div class="tool-info">
+        <div class="tool-name">Fintech Reader</div>
+        <div class="tool-desc">Fintechニュースを自動収集・要約するリーダー。</div>
+        <div class="tool-links">
+          <a class="tool-link primary" href="https://reader.koieko.com" target="_blank" rel="noopener">Open</a>
+          <a class="tool-link" href="https://github.com/koieko/fintech-reader" target="_blank" rel="noopener">GitHub</a>
+          <a class="tool-link" href="https://dashboard.render.com/web/srv-d8hsot5dt1ts73elr4p0" target="_blank" rel="noopener">Render</a>
+          <a class="tool-link" href="https://platform.claude.com/usage" target="_blank" rel="noopener">Claude 利用量</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- My Blog -->
+    <div class="tool-row">
+      <div class="tool-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </div>
+      <div class="tool-info">
+        <div class="tool-name">My Blog</div>
+        <div class="tool-desc">宗教×マーケティングのnoteシリーズ。</div>
+        <div class="tool-links">
+          <a class="tool-link primary" href="https://note.com/koieko" target="_blank" rel="noopener">note で読む</a>
+          <a class="tool-link" href="https://app.notion.com/p/0a3b87d8d752482fa7e10641e7b61a56?v=ae5dc45dea03472385dcc34f9411938f" target="_blank" rel="noopener">Notion</a>
+          <a class="tool-link" href="https://app.notion.com/p/b18f4973d42646fe90f12a73bb95aae4?v=90c8f05530fb4fc0aacc5c136c369ca3" target="_blank" rel="noopener">ネタ帳</a>
+          <a class="tool-link" href="https://us2.make.com/organization/7904042/dashboard" target="_blank" rel="noopener">Make</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- アイデアの補助線 -->
+    <div class="tool-row">
+      <div class="tool-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div class="tool-info">
+        <div class="tool-name">アイデアの補助線</div>
+        <div class="tool-desc">additional-lines.com のローカル保存版。文体参考用。</div>
+        <div class="tool-links">
+          <a class="tool-link primary" href="additional-lines/index.html" target="_blank" rel="noopener">Open</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>KO KOIE — Tools</footer>
+
+</body>
+</html>
